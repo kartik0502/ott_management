@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+    <center class="">
+        <center>
+            <h3 class="py-3">Select The Service You Want</h3>
+        </center>
+        <p class="py-1">
+            <a class="btn btn-info w-25" role="button" href="{% url 'user_insert' %}">User Insertion</a>
+        </p>
+        <p class="py-1">
+            <a class="btn btn-info w-25" role="button" href="{% url 'content_insert' %}">Content Insertion</a>
+        </p>
+    </center>
+{% endblock %}

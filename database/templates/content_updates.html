@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1 class="mb-4 mx-2 px-2 py-2 text-3xl font-bold">
+    Edit Content {{ Content.content_id }}
+</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group px-2 py-3 w-50 ">
+        <label for="formGroupExampleInput2" class="py-1">Content Id</label>
+        <input type="text" readonly class="form-control-plaintext" name="content_id" id="formGroupExampleInput" value="{{ Content.content_id }}">
+        <label for="formGroupExampleInput2" class="py-1">User Ratings</label>
+        <input type="text" class="form-control" name="user_ratings" id="formGroupExampleInput" value="{{ Content.user_ratings }}">
+        <label for="formGroupExampleInput2" class="py-1">Year Release</label>
+        <input type="text" class="form-control" name="year_release" id="formGroupExampleInput2" value="{{ Content.year_release }}">
+        <label for="formGroupExampleInput" class="py-1">Critics Rating</label>
+        <input type="text" class="form-control" name="critics_rating" id="formGroupExampleInput" value="{{ Content.critics_rating }}">
+        <label for="formGroupExampleInput" class="py-1">Employee Id</label>
+        <input type="text" class="form-control" name="employee_id" id="formGroupExampleInput" value="{{ Content.employee_id }}">
+        <label for="formGroupExampleInput2" class="py-1">Content Name</label>
+        <input type="text" class="form-control" name="content_name" id="formGroupExampleInput" value="{{ Content.content_name }}">
+        <input type="submit" class="btn btn-primary px-2 py-3 mx-2 my-2 w-25">
+    </div>
+    {% if messages %}
+    {% for mess in messages %}
+        <div class="text-lx font-bold">
+            {{mess}}        
+        </div>
+    {% endfor %}
+    {% endif %}
+</form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+    <center class="">
+        {% if messages %}
+        {% for mess in messages %}
+            <div class="p-3 mb-2 bg-success text-white mx-auto" id="msg">
+                {{mess}}        
+            </div>
+        {% endfor %}
+        {% endif %}
+        <center>
+            <h1 class="mx-auto my-1">Welcome to OTT Database</h1>
+            <h3 class="py-3">Select The Service You Want</h3>
+        </center>
+        <p class="py-1">
+            <a class="btn btn-info w-25" role="button" href="{% url 'index1' %}">Insertion</a>
+        </p>
+        <p class="py-1">
+            <a class="btn btn-info w-25" role="button" href="{% url 'index2' %}">View Database</a>
+        </p>
+        <p class="py-1">
+            <a class="btn btn-info w-25" role="button" href="{% url 'index3' %}">Deletion</a>
+        </p>
+        <p class="py-1">
+            <a class="btn btn-info w-25" role="button" href="{% url 'index4' %}">Update</a>
+        </p>
+    </center>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group px-2 py-3 w-50 ">
+        <label for="formGroupExampleInput" class="py-1">Content Id</label>
+        <input type="text" class="form-control" name="content_id" id="formGroupExampleInput">
+        <label for="formGroupExampleInput2" class="py-1">User Ratings</label>
+        <input type="text" class="form-control" name="user_ratings" id="formGroupExampleInput">
+        <label for="formGroupExampleInput2" class="py-1">Year Release</label>
+        <input type="text" class="form-control" name="year_release" id="formGroupExampleInput2">
+        <label for="formGroupExampleInput2" class="py-1">Critics Rating</label>
+        <input type="text" class="form-control" name="critics_rating" id="formGroupExampleInput">
+        <label for="formGroupExampleInput" class="py-1">Employee Id</label>
+        <input type="text" class="form-control" name="employee_id" id="formGroupExampleInput">
+        <label for="formGroupExampleInput2" class="py-1">Content Name</label>
+        <input type="text" class="form-control" name="content_name" id="formGroupExampleInput">
+        <input type="submit" class="btn btn-primary px-2 py-3 mx-2 my-2 w-25">
+    </div>
+    {% if messages %}
+    {% for mess in messages %}
+        <div class="text-lx font-bold">
+            {{mess}}        
+        </div>
+    {% endfor %}
+{% endif %}
+</form>
+{% endblock %}

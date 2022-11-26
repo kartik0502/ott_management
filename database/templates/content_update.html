@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group px-2 py-3 w-50 ">
+        <label for="formGroupExampleInput" class="py-1">Enter Content Id to be updated</label>
+        <input type="text" class="form-control" name="content_id" id="formGroupExampleInput">
+        <input type="submit" class="btn btn-primary px-2 py-3 mx-2 my-2 w-25">
+    </div>
+</form>
+{% endblock %}

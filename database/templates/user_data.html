@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block body %}
+<center class="space-y-4">
+    <h1 class="mb-4 text-3xl font-bold py-2">
+        List of All User
+    </h1>
+    <table class="table table-bordered">
+        <thread>
+            <tr>
+                <th class="text-center">User ID</th>
+                <th class="text-center">User Name</th>
+                <th class="text-center">Phone Number</th>
+                <th class="text-center">Email id</th>
+                <th class="text-center">Watch Hours</th>
+                <th class="text-center">Employee Id</th>
+            </tr>
+        </thread>
+        {% for data in User %}
+        <tr>
+            <td class="text-center">{{data.user_id}}</td>
+            <td class="text-center">{{data.user_name}}</td>
+            <td class="text-center">{{data.phone_number}}</td>
+            <td class="text-center">{{data.email}}</td>
+            <td class="text-center">{{data.watch_hours}}</td>
+            <td class="text-center">{{data.employee_id}}</td>
+            <!-- <td><a href="#" class="bg-blue-500 rounded-md text-sm px-2 text-white hover:bg-blue-600">Edit</a></td> -->
+            <!-- <td><a href="#" class="bg-red-500 rounded-md text-sm px-2 text-white hover:bg-red-600">Delete</a></td> -->
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+{% endblock %}

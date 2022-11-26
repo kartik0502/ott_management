@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block body %}
+<center class="space-y-4">
+    <h1 class="mb-4 text-3xl font-bold py-2">
+        List of All Content
+    </h1>
+    <table class="table table-bordered">
+        <thread>
+            <tr>
+                <th class="text-center">Content ID</th>
+                <th class="text-center">Content Name</th>
+                <th class="text-center">User Ratings</th>
+                <th class="text-center">Critics Rating</th>
+                <th class="text-center">Year Release</th>
+                <th class="text-center">Employee Id</th>
+            </tr>
+        </thread>
+        {% for data in Content %}
+        <tr>
+            <td class="text-center">{{data.content_id}}</td>
+            <td class="text-center">{{data.content_name}}</td>
+            <td class="text-center">{{data.user_ratings}}</td>
+            <td class="text-center">{{data.critics_rating}}</td>
+            <td class="text-center">{{data.year_release}}</td>
+            <td class="text-center">{{data.employee_id}}</td>
+            <!-- <td><a href="#" class="bg-blue-500 rounded-md text-sm px-2 text-white hover:bg-blue-600">Edit</a></td> -->
+            <!-- <td><a href="#" class="bg-red-500 rounded-md text-sm px-2 text-white hover:bg-red-600">Delete</a></td> -->
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+{% endblock %}

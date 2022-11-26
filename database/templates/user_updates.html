@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1 class="mb-4 mx-2 px-2 py-2 text-3xl font-bold">
+    Edit User {{ User.user_id }}
+</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group px-2 py-3 w-50 ">
+        <label for="formGroupExampleInput2" class="py-1">User Id</label>
+        <input type="text" readonly class="form-control-plaintext" name="user_id" id="formGroupExampleInput" value="{{ User.user_id }}">
+        <label for="formGroupExampleInput2" class="py-1">User Name</label>
+        <input type="text" class="form-control" name="user_name" id="formGroupExampleInput" value="{{ User.user_name }}">
+        <label for="formGroupExampleInput2" class="py-1">Phone Number</label>
+        <input type="text" class="form-control" name="phone_number" id="formGroupExampleInput2" value="{{ User.phone_number }}">
+        <label for="exampleInputEmail1" class="py-1">Email address</label>
+        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ User.email }}">
+        <label for="formGroupExampleInput" class="py-1">Watch Hours</label>
+        <input type="text" class="form-control" name="watch_hours" id="formGroupExampleInput" value="{{ User.watch_hours }}">
+        <label for="formGroupExampleInput2" class="py-1">Employee Id</label>
+        <input type="text" class="form-control" name="employee_id" id="formGroupExampleInput" value="{{ User.employee_id }}">
+        <input type="submit" class="btn btn-primary px-2 py-3 mx-2 my-2 w-25">
+    </div>
+    {% if messages %}
+    {% for mess in messages %}
+        <div class="text-lx font-bold">
+            {{mess}}        
+        </div>
+    {% endfor %}
+    {% endif %}
+</form>
+{% endblock %}
